@@ -1,19 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>SupremeToDo</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <title>A Supreme List</title>
+
 </head>
 <body>
-
-  <ul>
+  <div class="container">
+    <h1>The Supreme Must-Do, To-Do List!</h1>
+  <ul class="nav nav-tabs">
     <li><%= link_to "Home", welcome_index_path %></li>
     <li><%= link_to "What is The Must Do To-Do List?", welcome_about_path %></li>
   </ul>
 
-<%= yield %>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
 
-</body>
+      <%= yield %>
+    </div>
+  </body>
 </html>
