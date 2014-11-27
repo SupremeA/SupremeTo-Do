@@ -1,0 +1,31 @@
+== README
+
+BLOCITOFF! A MUST-DO TO-DO LIST!
+
+Blocitoff is a self-destructing to-do list. This app will allow you to keep a list of to do items
+for 7 days. After 7 days the app will automatically delete the item from your to-do list.
+This will happen because if you havent done it in 7 days, your not going to do it. A MUST-DO TO DO List!
+
+Things you may want to cover:
+
+* Ruby version: ruby 2.0.0p576
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
