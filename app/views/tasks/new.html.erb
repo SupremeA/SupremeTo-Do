@@ -1,0 +1,27 @@
+<h1>New Task</h1>
+
+<div class="row">
+  <div class="col-md-4">
+    <p><b>Remember you must complete your task in 7 days!</b></p>
+    <ul>
+      <li>Start Today!</li>
+      <li>Add a picture to help you remeber.</li>
+      <li>Check your email for a daily reminder about your task.</li>
+    </ul>
+  </div>
+  <div class="col-md-8">
+    <%= form_for @task do |f| %>
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control', placeholder: "Enter task title" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :body %>
+      <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter task body" %>
+    </div>
+    <div class="form-group">
+      <%= f.submit "Add to your list", class: 'btn btn-success' %>
+    </div>
+    <% end %>
+  </div>
+</div>

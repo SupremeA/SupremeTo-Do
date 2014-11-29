@@ -1,0 +1,10 @@
+<h1>All Tasks</h1>
+<% @tasks.each do |task| %>
+<div class="media">
+  <div class="media-body">
+    <h4 class="media-heading">
+      <%= link_to task.title, task %>
+    </h4>
+  </div>
+</div>
+<% end %>
