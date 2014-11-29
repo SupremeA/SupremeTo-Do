@@ -18,6 +18,12 @@ gem 'autoprefixer-rails'
 #seed-data
 gem 'faker'
 
+#user-authentication
+gem 'devise'
+
+#makes private files
+gem 'figaro', '1.0'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
