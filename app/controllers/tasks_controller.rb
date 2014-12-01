@@ -17,7 +17,7 @@ class TasksController < ApplicationController
 
   def create
     @list = List.find(params[:list_id])
-    @task = current_user.tasks.build(post_params)
+    @task = current_user.tasks.build(task_params)
     @task.list = @list
     authorize @task
 
@@ -54,4 +54,5 @@ class TasksController < ApplicationController
 
   def task_params
     params.require(:task).permit(:title, :body)
+  end
 end
