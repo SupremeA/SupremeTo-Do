@@ -1,3 +1,6 @@
 class Task < ActiveRecord::Base
-  belongs_to :list
+  belongs_to :user
+    belongs_to :list
+
+    default_scope { order ('created_at DESC') }
 end

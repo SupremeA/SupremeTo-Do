@@ -1,7 +1,9 @@
 ToDo::Application.routes.draw do
 
   devise_for :users
-  resources :tasks
+    resources :lists do
+      resources :tasks, except: [:index]
+    end
 
 
   get 'about' => "welcome#about"

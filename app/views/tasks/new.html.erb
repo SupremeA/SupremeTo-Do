@@ -10,14 +10,14 @@
     </ul>
   </div>
   <div class="col-md-8">
-    <%= form_for @task do |f| %>
+    <%= form_for [@list, @task] do |f| %>
     <div class="form-group">
       <%= f.label :title %>
       <%= f.text_field :title, class: 'form-control', placeholder: "Enter task title" %>
     </div>
     <div class="form-group">
       <%= f.label :body %>
-      <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter task body" %>
+      <%= f.text_area :body, rows: 2, class: 'form-control', placeholder: "Enter task body" %>
     </div>
     <div class="form-group">
       <%= f.submit "Add to your list", class: 'btn btn-success' %>

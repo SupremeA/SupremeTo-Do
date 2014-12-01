@@ -5,6 +5,9 @@
     <h4 class="media-heading">
       <%= link_to task.title, task %>
     </h4>
+    <small>
+      submitted <%= time_ago_in_words(task.created_at) %> ago by <%= task.user.name %><br/>
+    </small>
   </div>
 </div>
 <% end %>

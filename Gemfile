@@ -24,6 +24,9 @@ gem 'devise'
 #makes private files
 gem 'figaro', '1.0'
 
+#add user roles
+gem 'pundit'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 

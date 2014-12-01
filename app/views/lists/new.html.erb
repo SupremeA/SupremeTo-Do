@@ -1,0 +1,27 @@
+<h1>New To-Do List</h1>
+
+<div class="row">
+  <div class="col-md-4">
+    <p>Guidelines for To-Do List</p>
+    <ul>
+      <li>Don't put something you won't do.</li>
+      <li>Don't list big task, remeber you only have 7 days.</li>
+      <li>Break big task into weekly gols to complete.</li>
+    </ul>
+  </div>
+  <div class="col-md-8">
+    <%= form_for @list do |f| %>
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control', placeholder: "Enter list title" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :description %>
+      <%= f.text_field :description, class: 'form-control', placeholder: "Enter your list description" %>
+    </div>
+    <div class="form-group">
+      <%= f.submit "Create New List", class: 'btn btn-success' %>
+    </div>
+    <% end %>
+  </div>
+</div>

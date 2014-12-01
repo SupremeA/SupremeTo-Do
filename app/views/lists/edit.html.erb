@@ -1,0 +1,26 @@
+<h1>Edit Your List</h1>
+
+
+<div class="row">
+  <div class="col-md-4">
+    <p>Guidelines for list:</p>
+    <ul>
+      <li>Mark your list as professional or personal.</li>
+      <li>Be determined to get this list done.</li>
+      <li>Get up every morning and look at your list.</li>
+    </ul>
+  </div>
+  <div class="col-md-8">
+    <%= form_for @list do |f| %>
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control', placeholder: "Enter list name" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :description %>
+      <%= f.text_field :description, class: 'form-control', placeholder: "Enter your list description" %>
+    </div>
+      <%= f.submit "Get Started on your list", class: 'btn btn-success' %>
+    </div>
+  <% end %>
+</div>
