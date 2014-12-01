@@ -1,6 +1,8 @@
 ToDo::Application.routes.draw do
 
+  get "users/update"
   devise_for :users
+    resources :users, only: [:update]
     resources :lists do
       resources :tasks, except: [:index]
     end
