@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   has_many :lists
   has_many :tasks
+  has_many :completes, dependent: :destroy
 
   def admin?
     role == 'admin'
@@ -12,5 +13,9 @@ class User < ActiveRecord::Base
 
   def moderator?
     role == 'moderator'
+  end
+
+  def completed(task)
+    completes.where(task_id: task.id).first
   end
 end

@@ -5,7 +5,7 @@ class ListPolicy < ApplicationPolicy
   end
 
   def create?
-    user.present? || user.admin?
+    user.present? && (record.user == user || user.admin?)
   end
 
   def update?

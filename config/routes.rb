@@ -4,9 +4,10 @@ ToDo::Application.routes.draw do
   devise_for :users
     resources :users, only: [:update]
     resources :lists do
-      resources :tasks, except: [:index]
+      resources :tasks, except: [:index] do
+        resources :completes, only: [:create, :destroy]
     end
-
+  end
 
   get 'about' => "welcome#about"
 

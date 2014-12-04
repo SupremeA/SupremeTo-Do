@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141129202808) do
+ActiveRecord::Schema.define(version: 20141204162909) do
+
+  create_table "completes", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "task_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "completes", ["task_id"], name: "index_completes_on_task_id"
+  add_index "completes", ["user_id"], name: "index_completes_on_user_id"
 
   create_table "lists", force: true do |t|
     t.string   "title"
@@ -30,6 +40,8 @@ ActiveRecord::Schema.define(version: 20141129202808) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.boolean  "completes",  default: false
+    t.boolean  "completed",  default: false
   end
 
   add_index "tasks", ["list_id"], name: "index_tasks_on_list_id"
