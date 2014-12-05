@@ -16,6 +16,6 @@ class User < ActiveRecord::Base
   end
 
   def completed(task)
-    completes.where(task_id: task.id).first
+    completed.where(task_id: task.id).first
   end
 end

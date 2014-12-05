@@ -11,17 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141204162909) do
-
-  create_table "completes", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "task_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "completes", ["task_id"], name: "index_completes_on_task_id"
-  add_index "completes", ["user_id"], name: "index_completes_on_user_id"
+ActiveRecord::Schema.define(version: 20141204233749) do
 
   create_table "lists", force: true do |t|
     t.string   "title"

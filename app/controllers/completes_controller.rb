@@ -3,23 +3,24 @@ class CompletesController < ApplicationController
   before_filter :authenticate_user!
 
   def create
-    @task = Task.find(params[:task_id])
-    complete = current_user.completes.build(task_id: @task_id)
+    @list = List.find(params[:list_id])
+    @task = current_user.tasks.build(task_params)
+    @task = @task.completed :true
 
-    if complete.save
-      flash[:notice] = "Congrats on completing your task!"
-      redirect_to [@task.list, @task]
+    if @task.save
+      flash[:notice] = "Your task has been completed."
+      redirect_to [@list, @task]
     else
-      flash[:error] = "Are you sure you completed this? Please try to complete again."
-      redirect_to [task.list, task]
+      flash[:error] = "Please try again."
+      render :new
     end
   end
 
   def destroy
     @task = Task.find(params[:task_id])
-    complete = current_user.completes.destroy(task_id: @task_id)
+    complete = current_user.self.task.update_attributes(:completed => false)
 
-    if complete.destroy
+    if completed.false
       flash[:notice] = "You have marked this task as incomplete."
       redirect_to [@task.list, @task]
     else
