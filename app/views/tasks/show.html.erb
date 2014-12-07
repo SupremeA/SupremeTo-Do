@@ -5,7 +5,6 @@
 </br>
 </br>
 <pre>due in <%= distance_of_time_in_words_to_now(@task.created_at + 7.days) %></pre>
-<%= render partial: 'completed/complete', locals: { task: @task } %>
 </br>
 <% if @task.completed? %>
   <div class="label label-success">

@@ -5,7 +5,10 @@ ToDo::Application.routes.draw do
     resources :users, only: [:update]
     resources :lists do
       resources :tasks, except: [:index] do
-        resources :completed, only: [:create, :destroy]
+        resources :completed do
+          put :completed_true
+          put :completed_false
+        end
     end
   end
 

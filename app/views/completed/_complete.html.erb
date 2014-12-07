@@ -1,10 +1,10 @@
 <div class="complete">
   <% if @task.completed? %>
-    <%= link_to [task.list,task], class: 'btn btn-primary', method: :delete do %>
+    <%= link_to "completed", task.completed_true(@task), class: 'btn btn-primary', method: :post do %>
       <i class="glyphicon glyphicon-ok-sign"> </i>&nbsp; Completed
     <% end %>
   <% else %>
-    <%= link_to [task.list,task], class: 'btn btn-danger', method: :task do %>
+    <%= link_to "Incomplete", task.completed_false(@task), class: 'btn btn-danger', method: :delete do %>
       <i class="glyphicon glyphicon-plus-sign"> </i>&nbsp; InComplete
     <% end %>
   <% end %>

@@ -2,6 +2,7 @@ class TasksController < ApplicationController
 
   before_filter :authenticate_user!
 
+
   def index
     @tasks = Task.all
   end
@@ -46,6 +47,26 @@ class TasksController < ApplicationController
       flash[:error] = "There was an error saving your task. Please try again."
       render :new
     end
+  end
+
+  def completed_true(task)
+    @task = Task.find(params[:id])
+    @task.update_attributes(:completed => true)
+      if self.completed? == true
+        redirect_to (@task)
+      else
+        redirect_to @list
+      end
+  end
+
+  def completed_false(task)
+    @task = Task.find(params[:id])
+    @task.update_attributes(:completed => false)
+      if self.completed? == false
+        redirect_to (@task)
+      else
+        redirect_to @list
+      end
   end
 
   private
