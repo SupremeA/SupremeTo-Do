@@ -1,5 +1,5 @@
 every :day, :at => '12:05 am' do
-  rake db:delete_tasks
+  rake "delete_tasks"
 end
 
 
